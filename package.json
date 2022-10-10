@@ -1,7 +1,7 @@
 {
-   "name": "next-starter",
-   "version": "0.1.0",
-   "private": true,
+   "name": "arun-next-starter",
+   "version": "0.0.1",
+   "private": false,
    "scripts": {
       "dev": "next dev",
       "build": "next build",
@@ -9,11 +9,11 @@
       "lint": "next lint"
    },
    "dependencies": {
-      "@uiw/react-md-editor": "^3.19.0",
-      "next": "12.3.1",
+      "@uiw/react-md-editor": "latest",
+      "next": "latest",
       "next-remove-imports": "^1.0.7",
-      "react": "18.2.0",
-      "react-dom": "18.2.0"
+      "react": "latest",
+      "react-dom": "latest"
    },
    "devDependencies": {
       "@testing-library/jest-dom": "^5.16.5",
