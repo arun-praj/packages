@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 const { execSync } = require('child_process')
+const { log } = require('console')
 
 const runCommand = (command) => {
    try {
@@ -12,24 +13,27 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2]
 
-const gitCheckoutCommand = `git clone --depth 1 --branch next-starter https://github.com/arun-praj/packages.git ${repoName}`
+const cloneRepo = `git clone --depth 1 --branch next-starter https://github.com/arun-praj/packages.git ${repoName}`
 
-const installDependencyCmd = `cd ${repoName} && npm install`
+const c = `cd ${repoName}`
 
-console.log(`Cloning ${repoName}`)
+const cloned = runCommand(cloneRepo)
 
-const checkedOut = runCommand(gitCheckoutCommand)
-
-if (!checkedOut) {
+if (!cloned) {
+   console.error(`Failed to clone https://github.com/arun-praj/packages.git`)
    process.exit(-1)
 }
 
 console.log(`Installing dependencies ${repoName}`)
+runCommand(`cd ${reponame}`)
 const installed = runCommand(installDependencyCmd)
 
 if (!installed) {
+   console.error(`Failed to install npm dependencies`)
    process.exit(-1)
 }
 
 console.log('Completed setup')
-console.log(`cd ${repoName}  then npm run dev`)
+console.log('\n\n')
+
+console.log(`1. cd ${repoName} \n2. npm run dev`)
