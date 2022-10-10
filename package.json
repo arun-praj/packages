@@ -1,5 +1,5 @@
 {
-   "name": "arun-next-starter",
+   "name": "arun-nextapp",
    "version": "0.0.1",
    "private": false,
    "scripts": {
@@ -9,7 +9,6 @@
       "lint": "next lint"
    },
    "dependencies": {
-      "@uiw/react-md-editor": "latest",
       "next": "latest",
       "next-remove-imports": "^1.0.7",
       "react": "latest",
